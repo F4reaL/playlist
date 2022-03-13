@@ -27,6 +27,7 @@
   width: 100%;
   height: calc(90% - 100px);
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .container .title {
   font-size: 24px;
@@ -146,6 +147,7 @@ input[type=range]:hover {
   width: calc(100% - 10px);
   bottom: 10px;
   background-color: #091227;
+  padding-left: 10px;
 }
 .playing #timer {
   width: 15%;

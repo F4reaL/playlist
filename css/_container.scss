@@ -5,6 +5,7 @@
     width: 100%;
     height: calc(90% - 100px);
     overflow-y: scroll;
+    overflow-x: hidden;
     .title {
         font-size: 24px;
         font-weight: 700;
