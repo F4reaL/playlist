@@ -19,8 +19,8 @@ const app = {
     songs: [{
             song_name: 'Believer',
             song_singer: 'IMAGINE DRAGON',
-            path: '../assets/music/song1.mp3',
-            image: '../assets/album/song1.png'
+            path: './assets/music/song1.mp3',
+            image: './assets/album/song1.png'
         },
         {
             song_name: 'Faded',
