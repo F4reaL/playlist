@@ -25,14 +25,14 @@ const app = {
         {
             song_name: 'Faded',
             song_singer: 'ALAN WALKER',
-            path: '../assets/music/song2.mp3',
-            image: '../assets/album/song2.png'
+            path: '../../assets/music/song2.mp3',
+            image: '../../assets/album/song2.png'
         },
         {
             song_name: 'Dream On',
             song_singer: 'ROGGER TERRY',
-            path: '../assets/music/song3.mp3',
-            image: '../assets/album/song3.png'
+            path: '/assets/music/song3.mp3',
+            image: '/assets/album/song3.png'
         },
         {
             song_name: 'Natural',
