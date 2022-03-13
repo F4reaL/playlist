@@ -1,0 +1,46 @@
+.container {
+    position: absolute;
+    top: 10%;
+    // width: calc(100% - 5px);
+    width: 100%;
+    height: calc(90% - 100px);
+    overflow-y: scroll;
+    .title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-left: 30px;
+        margin-top: 10px;
+    }
+    .songList {
+        margin-top: 20px;
+        padding-left: 10px;
+        width: calc(100% - 5px);
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        @import 'song';
+    }
+}
+
+// .songList::-webkit-scrollbar {
+//     width: 5px;
+// }
+// .songList::-webkit-scrollbar-thumb {
+//     border-radius: 10px;
+// }
+// .songList::-webkit-scrollbar-track {
+//     border-radius: 10px;
+//     background-color: rgb(206, 197, 197);
+// }
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgb(95, 90, 90);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}

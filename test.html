@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .speaker {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 20px;
+            border: 1px solid purple;
+            border-radius: 10px;
+            background-color: blueviolet;
+        }
+        
+        .volumn {
+            display: none;
+            position: absolute;
+            height: 20px;
+            width: 100px;
+            transform: rotate(-90deg);
+            top: -60px;
+            border: 1px solid blueviolet;
+            box-sizing: border-box;
+        }
+        
+        .speaker:hover>.volumn {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="speaker">
+        <input type="range" step="1" min="0" max="100" value="0" class="volumn"></input>
+
+    </div>
+    <div class="input-group">
+        <div class="form-outline">
+            <input type="search" id="form1" class="form-control" />
+            <label class="form-label" for="form1">Search</label>
+        </div>
+        <button type="button" class="btn btn-primary">
+          <i class="fas fa-search"></i>
+        </button>
+    </div>
+</body>
+
+</html>

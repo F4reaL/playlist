@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="http://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="playList">
+        <div class="navbar">
+            <div class="nav-arrow"></div>
+            <div class="nav-adjust"></div>
+        </div>
+        <div class="container">
+            <div class="title">
+                HOT Songs
+            </div>
+            <div class="songList" id="songList">
+
+            </div>
+        </div>
+
+        <div class="playing">
+            <input id="progress" type="range" value="0" step="0.1" min="0" max="100" class="timeOfMusic">
+            <div id="timer">00 : 00</div>
+            <div class="song cd">
+                <img src="" alt="">
+                <div class="details">
+                    <div class="songName"></div>
+                    <div class="songSinger"></div>
+                </div>
+            </div>
+            <div class="control">
+                <div id="pre-btn"></div>
+                <div id="play-btn" class=""></div>
+                <div id="next-btn"></div>
+                <div id="speaker">
+                    <input id="volumn" type="range" value="50" step="1" min="0" max="100">
+                </div>
+            </div>
+
+            <audio id="audio" src=""></audio>
+        </div>
+        <div class="home-btn"></div>
+    </div>
+    <div id="playingNow"></div>
+    <div id="options"></div>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

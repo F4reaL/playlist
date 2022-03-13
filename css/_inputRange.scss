@@ -1,0 +1,55 @@
+input[type=range] {
+    display: inline-block;
+    -webkit-appearance: none;
+    width: 75%;
+    height: 5px;
+    border-radius: 5px;
+    background: rgb(209, 96, 96);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+::-webkit-slider-thumb {
+    // -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgb(247, 244, 244);
+    color: #000;
+    cursor: pointer;
+}
+
+ ::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(100, 69, 214);
+    cursor: pointer;
+}
+
+#volumn::-webkit-slider-thumb {
+    // -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(247, 244, 244);
+    color: #000;
+    cursor: pointer;
+}
+
+#volumn input[type=range] {
+    display: inline-block;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    background: rgb(233, 229, 229);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+input[type=range]:hover {
+    cursor: pointer;
+}
