@@ -25,74 +25,74 @@ const app = {
         {
             song_name: 'Faded',
             song_singer: 'ALAN WALKER',
-            path: '../../assets/music/song2.mp3',
-            image: '../../assets/album/song2.png'
+            path: './assets/music/song2.mp3',
+            image: './assets/album/song2.png'
         },
         {
             song_name: 'Dream On',
             song_singer: 'ROGGER TERRY',
-            path: '/assets/music/song3.mp3',
-            image: '/assets/album/song3.png'
+            path: './assets/music/song3.mp3',
+            image: './assets/album/song3.png'
         },
         {
             song_name: 'Natural',
             song_singer: 'IMAGINE DRAGON',
-            path: '../assets/music/song4.mp3',
-            image: '../assets/album/song4.png'
+            path: './assets/music/song4.mp3',
+            image: './assets/album/song4.png'
         },
         {
             song_name: 'Túy Hồng Nhan',
             song_singer: 'THỦY HỬ',
-            path: '../assets/music/song5.mp3',
-            image: '../assets/album/song5.png'
+            path: './assets/music/song5.mp3',
+            image: './assets/album/song5.png'
         },
         {
             song_name: 'Chỉ là không cùng nhau',
             song_singer: 'TĂNG PHÚC',
-            path: '../assets/music/song6.mp3',
-            image: '../assets/album/song6.png'
+            path: './assets/music/song6.mp3',
+            image: './assets/album/song6.png'
         },
         {
             song_name: 'Bad Liar',
             song_singer: 'IMAGINE DRAGON',
-            path: '../assets/music/song7.mp3',
-            image: '../assets/album/song7.png'
+            path: './assets/music/song7.mp3',
+            image: './assets/album/song7.png'
         },
         {
             song_name: 'Dream On',
             song_singer: 'ROGGER TERRY',
-            path: '../assets/music/song3.mp3',
-            image: '../assets/album/song3.png'
+            path: './assets/music/song3.mp3',
+            image: './assets/album/song3.png'
         },
         {
             song_name: 'Faded',
             song_singer: 'ALAN WALKER',
-            path: '../assets/music/song2.mp3',
-            image: '../assets/album/song2.png'
+            path: './assets/music/song2.mp3',
+            image: './assets/album/song2.png'
         },
         {
             song_name: 'Dream On',
             song_singer: 'ROGGER TERRY',
-            path: '../assets/music/song3.mp3',
-            image: '../assets/album/song3.png'
+            path: './assets/music/song3.mp3',
+            image: './assets/album/song3.png'
         },
         {
             song_name: 'Faded',
             song_singer: 'ALAN WALKER',
-            path: '../assets/music/song2.mp3',
-            image: '../assets/album/song2.png'
+            path: './assets/music/song2.mp3',
+            image: './assets/album/song2.png'
         },
         {
             song_name: 'Dream On',
             song_singer: 'ROGGER TERRY',
-            path: '../assets/music/song3.mp3',
-            image: '../assets/album/song3.png'
+            path: './assets/music/song3.mp3',
+            image: './assets/album/song3.png'
         },
         {
             song_name: 'Natural',
             song_singer: 'IMAGINE DRAGON',
-            path: '../assets/music/song4.mp3',
-            image: '../assets/album/song4.png'
+            path: './assets/music/song4.mp3',
+            image: './assets/album/song4.png'
         }
     ],
 
