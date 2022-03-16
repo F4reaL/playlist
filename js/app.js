@@ -252,7 +252,7 @@ const app = {
 
         //Ẩn searchList khi click ra ngoài
         document.onclick = function(e) {
-            if (!e.target.closest('#songList')) {
+            if (!e.target.closest('li')) {
                 searchUl.style.display = 'none';
             }
         }
@@ -263,10 +263,10 @@ const app = {
         // });
 
 
-        // searchInput.addEventListener('focusin', (e) => {
-        //     console.log('in', e.target);
-        //     _this.searchSong();
-        // });
+        searchInput.addEventListener('focusin', (e) => {
+            console.log('in', e.target);
+            _this.searchSong();
+        });
 
     },
 
