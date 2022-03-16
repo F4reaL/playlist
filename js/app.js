@@ -9,7 +9,9 @@ const nextbtn = document.getElementById('next-btn');
 const prevbtn = document.getElementById('pre-btn');
 const speaker = document.getElementById('speaker');
 const volumn = document.getElementById('volumn');
-const songList = document.querySelector('.songList')
+const songList = document.querySelector('.songList');
+const searchInput = document.getElementById('search');
+const searchUl = document.getElementById('searchList');
 
 const app = {
     currentIndex: 0,
@@ -17,78 +19,98 @@ const app = {
     isMuted: false,
 
     songs: [{
+            id: 1,
             song_name: 'Believer',
             song_singer: 'IMAGINE DRAGON',
             path: './assets/music/song1.mp3',
             image: './assets/album/song1.png'
         },
         {
+            id: 2,
             song_name: 'Faded',
             song_singer: 'ALAN WALKER',
             path: './assets/music/song2.mp3',
             image: './assets/album/song2.png'
         },
         {
+            id: 3,
             song_name: 'Dream On',
             song_singer: 'ROGGER TERRY',
             path: './assets/music/song3.mp3',
             image: './assets/album/song3.png'
         },
         {
+            id: 4,
             song_name: 'Natural',
             song_singer: 'IMAGINE DRAGON',
             path: './assets/music/song4.mp3',
             image: './assets/album/song4.png'
         },
         {
+            id: 5,
             song_name: 'Túy Hồng Nhan',
             song_singer: 'THỦY HỬ',
             path: './assets/music/song5.mp3',
             image: './assets/album/song5.png'
         },
         {
-            song_name: 'Chỉ là không cùng nhau',
+            id: 6,
+            song_name: 'Không cùng nhau',
             song_singer: 'TĂNG PHÚC',
             path: './assets/music/song6.mp3',
             image: './assets/album/song6.png'
         },
         {
+            id: 7,
             song_name: 'Bad Liar',
             song_singer: 'IMAGINE DRAGON',
             path: './assets/music/song7.mp3',
             image: './assets/album/song7.png'
         },
         {
+            id: 8,
             song_name: 'Dream On',
             song_singer: 'ROGGER TERRY',
             path: './assets/music/song3.mp3',
             image: './assets/album/song3.png'
         },
         {
+            id: 9,
             song_name: 'Faded',
             song_singer: 'ALAN WALKER',
             path: './assets/music/song2.mp3',
             image: './assets/album/song2.png'
         },
         {
+            id: 10,
             song_name: 'Dream On',
             song_singer: 'ROGGER TERRY',
             path: './assets/music/song3.mp3',
             image: './assets/album/song3.png'
         },
         {
+            id: 11,
             song_name: 'Faded',
             song_singer: 'ALAN WALKER',
             path: './assets/music/song2.mp3',
             image: './assets/album/song2.png'
         },
         {
+            id: 12,
             song_name: 'Dream On',
             song_singer: 'ROGGER TERRY',
             path: './assets/music/song3.mp3',
             image: './assets/album/song3.png'
         },
         {
+            id: 13,
+            song_name: 'Natural',
+            song_singer: 'IMAGINE DRAGON',
+            path: './assets/music/song4.mp3',
+            image: './assets/album/song4.png'
+        },
+        {
+            id: 14,
             song_name: 'Natural',
             song_singer: 'IMAGINE DRAGON',
             path: './assets/music/song4.mp3',
@@ -209,6 +231,36 @@ const app = {
 
         }
 
+        //Lắng nghe việc search
+        searchInput.oninput = function() {
+            _this.searchSong();
+            searchUl.style.display = 'block';
+        }
+
+
+        searchUl.onclick = function(e) {
+            const selectedSong = e.target.closest('.song');
+            console.log(selectedSong)
+            if (selectedSong) {
+                _this.currentIndex = Number(selectedSong.getAttribute('songID')) - 1;
+                _this.loadCurrentSong();
+                // _this.render();
+                audio.play();
+                searchInput.value = '';
+                searchUl.style.display = 'none';
+
+            }
+
+
+        }
+
+        searchInput.addEventListener('focusout', (e) => {
+            console.log('out', e.target);
+            const condi = true;
+            // setTimeout(() => searchUl.style.display = 'none', 0)
+            _this.searchSong(condi);
+        });
+
     },
 
     //Định nghĩa bài hát hiện tại
@@ -259,6 +311,28 @@ const app = {
         this.loadCurrentSong();
     },
 
+    //Tìm kiếm bài hát
+    searchSong: function(condi) {
+        let searchValue = searchInput.value.toUpperCase();
+        if (searchValue) {
+            let lis = this.songs.map((s) => {
+                if (s.song_name.toUpperCase().indexOf(searchValue) > -1) {
+                    return `<li><div class="song cd" songID="${s.id}">
+                    <img src="${s.image}" alt="">
+                    <div class="details">
+                        <div class="songName">${s.song_name}</div>
+                        <div class="songSinger">${s.song_singer}</div>
+                    </div>
+                </div></li>`;
+                }
+            });
+            searchUl.innerHTML = lis.join('');
+        }
+        if (condi) {
+            searchUl.innerHTML = '';
+        }
+
+    },
 
     start: function() {
         // Định nghĩa các thuộc tính cho Object
@@ -272,6 +346,7 @@ const app = {
 
         //Render ra danh sách bài hát
         this.render();
+
 
     }
 }

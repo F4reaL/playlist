@@ -1,3 +1,4 @@
+@import 'variables';
 input[type=range] {
     display: inline-block;
     -webkit-appearance: none;
@@ -52,4 +53,49 @@ input[type=range] {
 
 input[type=range]:hover {
     cursor: pointer;
+}
+
+#search {
+    outline: none;
+    border: 1px solid rgb(100, 93, 93);
+    border-radius: 10px;
+    background-color: $main-color;
+    color: #fff;
+    padding-left: 35px;
+    margin-right: 20px;
+    background-image: url('../assets/magnifying-glass-solid.svg');
+    background-repeat: no-repeat;
+    background-size: 0.8rem;
+    background-position: 10px center;
+    width: 70px;
+    height: 25px;
+    transition: 0.3s ease-in-out;
+}
+
+#search:focus {
+    width: 180px;
+    border: 1px solid rgb(233, 223, 223);
+    position: relative;
+    box-sizing: border-box;
+}
+
+#searchList {
+    position: absolute;
+    list-style-type: none;
+    width: 180px;
+    display: none;
+}
+
+// #search:focus #searchList {
+//     display: block;
+// }
+#searchList li {
+    text-decoration: none;
+    border-bottom: 1px solid grey;
+    font-size: 13px;
+    height: 40px;
+}
+
+#searchList li:hover {
+    background-color: #15264e;
 }

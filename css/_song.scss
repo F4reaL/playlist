@@ -1,6 +1,7 @@
+//Song ở trong song list
 .song {
     margin-left: 20px;
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
     display: inline-block;
     img {
         height: 145px;
@@ -34,4 +35,64 @@
 
 .song:active {
     opacity: 0.7;
+}
+
+// song ở trong playing
+.song.cd {
+    height: 100%;
+    width: 45%;
+    float: left;
+    display: flex;
+    // align-items: center;
+    // justify-content: center;
+    img {
+        height: 72px;
+        width: 72px;
+    }
+    .details {
+        margin: auto;
+        text-align: center;
+        .songName {
+            font-size: 18px;
+        }
+        .songSinger {
+            font-size: 10px;
+            color: $primary-color-2;
+        }
+    }
+}
+
+// Song khi search
+#searchList {
+    li {
+        background-color: $main-color;
+        .song.cd {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                height: 30px;
+                width: 30px;
+            }
+            .details {
+                margin: auto;
+                text-align: center;
+                .songName {
+                    font-size: 14px;
+                    // margin-bottom: 0;
+                    margin-top: 0;
+                }
+                .songSinger {
+                    font-size: 10px;
+                    color: $primary-color-2;
+                    // margin-bottom: 0;
+                }
+            }
+        }
+    }
+    li:active {
+        opacity: 0.7;
+    }
 }

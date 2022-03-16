@@ -21,6 +21,95 @@
   margin: 0 24px;
 }
 
+.song {
+  margin-left: 20px;
+  display: inline-block;
+}
+.song img {
+  height: 145px;
+  width: 150px;
+  border-radius: 5px;
+}
+.song .songName {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 11px;
+  margin-bottom: 6px;
+}
+.song .songSinger {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 400;
+  color: #A5C0FF;
+  margin-bottom: 24px;
+}
+
+.song:hover {
+  cursor: pointer;
+}
+
+.song.active {
+  border: 3px solid #A5C0FF;
+  border-radius: 10px;
+}
+
+.song:active {
+  opacity: 0.7;
+}
+
+.song.cd {
+  height: 100%;
+  width: 45%;
+  float: left;
+  display: flex;
+}
+.song.cd img {
+  height: 72px;
+  width: 72px;
+}
+.song.cd .details {
+  margin: auto;
+  text-align: center;
+}
+.song.cd .details .songName {
+  font-size: 18px;
+}
+.song.cd .details .songSinger {
+  font-size: 10px;
+  color: #A5C0FF;
+}
+
+#searchList li {
+  background-color: #091227;
+}
+#searchList li .song.cd {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#searchList li .song.cd img {
+  height: 30px;
+  width: 30px;
+}
+#searchList li .song.cd .details {
+  margin: auto;
+  text-align: center;
+}
+#searchList li .song.cd .details .songName {
+  font-size: 14px;
+  margin-top: 0;
+}
+#searchList li .song.cd .details .songSinger {
+  font-size: 10px;
+  color: #A5C0FF;
+}
+#searchList li:active {
+  opacity: 0.7;
+}
+
 .container {
   position: absolute;
   top: 10%;
@@ -29,50 +118,21 @@
   overflow-y: scroll;
   overflow-x: hidden;
 }
-.container .title {
+.container .subbar {
   font-size: 24px;
   font-weight: 700;
   margin-left: 30px;
   margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.container .subbar .searchBox {
+  box-sizing: border-box;
 }
 .container .songList {
   margin-top: 20px;
   padding-left: 10px;
   width: calc(100% - 5px);
-}
-.container .songList .song {
-  margin-left: 20px;
-  margin-bottom: 10px;
-  display: inline-block;
-}
-.container .songList .song img {
-  height: 145px;
-  width: 150px;
-  border-radius: 5px;
-}
-.container .songList .song .songName {
-  text-align: center;
-  font-size: 14px;
-  font-weight: 500;
-  margin-top: 11px;
-  margin-bottom: 6px;
-}
-.container .songList .song .songSinger {
-  text-align: center;
-  font-size: 10px;
-  font-weight: 400;
-  color: #A5C0FF;
-  margin-bottom: 24px;
-}
-.container .songList .song:hover {
-  cursor: pointer;
-}
-.container .songList .song.active {
-  border: 3px solid #A5C0FF;
-  border-radius: 10px;
-}
-.container .songList .song:active {
-  opacity: 0.7;
 }
 
 ::-webkit-scrollbar {
@@ -142,6 +202,48 @@ input[type=range]:hover {
   cursor: pointer;
 }
 
+#search {
+  outline: none;
+  border: 1px solid #645d5d;
+  border-radius: 10px;
+  background-color: #091227;
+  color: #fff;
+  padding-left: 35px;
+  margin-right: 20px;
+  background-image: url("../assets/magnifying-glass-solid.svg");
+  background-repeat: no-repeat;
+  background-size: 0.8rem;
+  background-position: 10px center;
+  width: 70px;
+  height: 25px;
+  transition: 0.3s ease-in-out;
+}
+
+#search:focus {
+  width: 180px;
+  border: 1px solid #e9dfdf;
+  position: relative;
+  box-sizing: border-box;
+}
+
+#searchList {
+  position: absolute;
+  list-style-type: none;
+  width: 180px;
+  display: none;
+}
+
+#searchList li {
+  text-decoration: none;
+  border-bottom: 1px solid grey;
+  font-size: 13px;
+  height: 40px;
+}
+
+#searchList li:hover {
+  background-color: #15264e;
+}
+
 .playing {
   position: absolute;
   width: calc(100% - 10px);
@@ -153,28 +255,7 @@ input[type=range]:hover {
   width: 15%;
   display: inline-block;
   padding-left: 20px;
-  margin-top: 20px;
-}
-.playing .cd {
-  height: 100%;
-  width: 45%;
-  float: left;
-  display: flex;
-}
-.playing .cd img {
-  height: 72px;
-  width: 72px;
-}
-.playing .cd .details {
-  margin: auto;
   text-align: center;
-}
-.playing .cd .details .songName {
-  font-size: 18px;
-}
-.playing .cd .details .songSinger {
-  font-size: 10px;
-  color: #A5C0FF;
 }
 .playing .control {
   float: left;
@@ -269,6 +350,7 @@ input[type=range]:hover {
   border: none !important;
   outline: none !important;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 * {
