@@ -230,7 +230,6 @@ input[type=range]:hover {
   position: absolute;
   list-style-type: none;
   width: 180px;
-  display: none;
 }
 
 #searchList li {

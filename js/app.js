@@ -232,34 +232,41 @@ const app = {
         }
 
         //Lắng nghe việc search
-        searchInput.oninput = function() {
+        searchInput.onkeyup = function() {
             _this.searchSong();
             searchUl.style.display = 'block';
         }
-
-
         searchUl.onclick = function(e) {
             const selectedSong = e.target.closest('.song');
             console.log(selectedSong)
             if (selectedSong) {
                 _this.currentIndex = Number(selectedSong.getAttribute('songID')) - 1;
                 _this.loadCurrentSong();
-                // _this.render();
                 audio.play();
                 searchInput.value = '';
                 searchUl.style.display = 'none';
-
             }
-
+            e.stopPropagation();
 
         }
 
-        searchInput.addEventListener('focusout', (e) => {
-            console.log('out', e.target);
-            const condi = true;
-            // setTimeout(() => searchUl.style.display = 'none', 0)
-            _this.searchSong(condi);
-        });
+        //Ẩn searchList khi click ra ngoài
+        document.onclick = function(e) {
+            if (!e.target.closest('#songList')) {
+                searchUl.style.display = 'none';
+            }
+        }
+
+        // searchInput.addEventListener('focusout', (e) => {
+        //     console.log('out', e.target);
+        //     searchUl.innerHTML = '';
+        // });
+
+
+        // searchInput.addEventListener('focusin', (e) => {
+        //     console.log('in', e.target);
+        //     _this.searchSong();
+        // });
 
     },
 
@@ -281,7 +288,7 @@ const app = {
                 behavior: 'smooth',
                 block: 'nearest'
             })
-        }, 300)
+        }, 100)
     },
     //Load bài hát hiện tại
     loadCurrentSong: function() {
@@ -312,9 +319,10 @@ const app = {
     },
 
     //Tìm kiếm bài hát
-    searchSong: function(condi) {
+    searchSong: function() {
         let searchValue = searchInput.value.toUpperCase();
-        if (searchValue) {
+        if (searchValue.length > 0) {
+            console.log(typeof searchValue);
             let lis = this.songs.map((s) => {
                 if (s.song_name.toUpperCase().indexOf(searchValue) > -1) {
                     return `<li><div class="song cd" songID="${s.id}">
@@ -327,9 +335,10 @@ const app = {
                 }
             });
             searchUl.innerHTML = lis.join('');
-        }
-        if (condi) {
+
+        } else {
             searchUl.innerHTML = '';
+            console.log('empty')
         }
 
     },
