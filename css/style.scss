@@ -25,6 +25,11 @@ body {
 }
 
 @media screen and (min-width :391px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(to bottom right, rgb(77, 80, 247), rgb(32, 236, 42));
+    }
     #playList {
         position: fixed;
         top: 50%;
